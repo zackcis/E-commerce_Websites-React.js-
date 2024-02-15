@@ -42,14 +42,14 @@ export const FirstSection = () => {
     return (
         <>
 
-            <div className='w-[100%] h-[60vh]'>
+            <div className='w-[100%] h-[68vh] '>
                 <Carousel>
                     {slide.map((slide, index) => (
                         <div key={slide} className=''>
-                            <img className='relative' src={slide} alt={slide} />
-                            <div className='absolute gap-6 translate-x-[-50] translate-y-[-50] top-[50%] left-[40%] justify-center items-center'>
+                            <img className='relative h-[68vh]' src={slide} alt={slide} />
+                            <div className='absolute translate-x-[-50] translate-y-[-50] top-[50%] left-[40%] justify-center items-center text-center '>
                                 <p className='font-bold text-2xl text-white'>Only women can wear this</p>
-                                <h1 className='text-white font-bold text-6xl'>NEW ARRIVAL</h1>
+                                <h1 className='text-white font-bold text-6xl py-4'>NEW ARRIVAL</h1>
                                 <button className='bg-black w-[200px] text-white p-4  text-2xl hover:bg-[#e65540] rounded-full'>Send</button>
                             </div>
                         </div>
@@ -57,8 +57,6 @@ export const FirstSection = () => {
 
                 </Carousel>
             </div>
-
-
             <div className='w-[100%] flex justify-center items-center'>
                 <div className='w-[65%] gap-7 flex justify-center items-center p-10  '>
                     <div className='flex flex-col gap-7  justify-center items-center '>
@@ -160,9 +158,35 @@ export const FirstSection = () => {
                     </div>
                 </div>
             </div>
-<div className='w-[100%] flex justify-center items-center '>
-    <h1 className='font-bold text-5xl p-28'>@ FOLLOW INSTAGRAM</h1>
-</div>
+            <div className='w-[100%] flex justify-center items-center '>
+                <h1 className='font-bold text-5xl p-28'>@ FOLLOW INSTAGRAM</h1>
+            </div>
+            <div className='flex w-[100%] justify-center items-center p-20'>
+                <div className='w-[30%] flex flex-col justify-center items-center border-r-2 '>
+                    <h1 className='text-black text-2xl '>
+                        Free Delivery Worldwide
+                    </h1>
+                    <p className='text-[#f0f0f0] '>
+                        Mirum est notare quam littera gothica
+                    </p>
+                </div>
+                <div className='w-[30%] flex flex-col justify-center items-center border-r-2 '>
+                    <h1 className='text-black text-2xl '>
+                        Free Delivery Worldwide
+                    </h1>
+                    <p className='text-[#f0f0f0] '>
+                        Mirum est notare quam littera gothica
+                    </p>
+                </div>
+                <div className='w-[30%] flex flex-col justify-center items-center  '>
+                    <h1 className='text-black text-2xl '>
+                        Free Delivery Worldwide
+                    </h1>
+                    <p className='text-[#f0f0f0] '>
+                        Mirum est notare quam littera gothica
+                    </p>
+                </div>
+            </div>
         </>
     );
 }

@@ -6,7 +6,6 @@ import back from '../../../assets/back.jpg'
 export const FirstSectionAbout = () => {
     return (
         <>
-           
                 <div className='relative'>
                     <img src={back} alt="" />
                     <h1 className='absolute top-[50%] left-[50%] text-white font-bold text-5xl translate-x-[-50%] translate-y-[-50%]'>CONTACT</h1>
