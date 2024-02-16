@@ -1,18 +1,16 @@
-import img4 from '../assets/item-03.jpg';  
+import img4 from '../assets/item-03.jpg';
 import img5 from '../assets/item-04.jpg';
-import img6 from '../assets/item-10.jpg'; 
-import img7 from '../assets/item-11.jpg';  
+import img6 from '../assets/item-10.jpg';
+import img7 from '../assets/item-11.jpg';
 import img8 from '../assets/item-12.jpg';
-import img9 from '../assets/item-13.jpg'; 
-import img10 from  '../assets/item-14.jpg';
-import img11 from '../assets/item-15.jpg'; 
+import img9 from '../assets/item-13.jpg';
+import img10 from '../assets/item-14.jpg';
+import img11 from '../assets/item-15.jpg';
 import img12 from '../assets/item-16.jpg';
-
 import React, { createContext, useState } from 'react'
 export const MyContext = createContext()
 export const MyProvider = ({ children }) => {
-    const [test, setTest] = useState('Hello Test')
-
+    const [users, setUsers] = useState([])
 
     const [products, setProducts] = useState([
         {
@@ -103,7 +101,7 @@ export const MyProvider = ({ children }) => {
     return (
         <>
 
-            <MyContext.Provider value={[test, setTest,products, setProducts]} >
+            <MyContext.Provider value={[products, setProducts,users,setUsers]} >
                 {children}
             </MyContext.Provider>
         </>

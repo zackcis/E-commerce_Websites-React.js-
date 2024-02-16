@@ -8,14 +8,14 @@ export const FirstSectionAbout = () => {
         <>
                 <div className='relative'>
                     <img src={back} alt="" />
-                    <h1 className='absolute top-[50%] left-[50%] text-white font-bold text-5xl translate-x-[-50%] translate-y-[-50%]'>CONTACT</h1>
+                    <h1 className='absolute top-[50%] left-[50%] text-white font-bold text-5xl translate-x-[-50%]'>ABOUT</h1>
                 </div>
             
             <div className='flex justify-center items-center w-[100%] h-[70vh] p-5 bg-white gap-4'>
                 <div className='w-[20%]  overflow-hidden ' >
-                    <img className='hover:scale-110  ' src={story} alt="" />
+                    <img className='hover:scale-110 relative transition delay-75 ' src={story} alt="" />
                 </div>
-                <div className='flex flex-col gap-4 justify-center  w-[40%]'>
+                <div className='flex flex-col gap-4 justify-center w-[40%]'>
                     <div className='text-black '>
                         <h2 className='text-3xl'><b>Our story</b></h2>
                     </div>

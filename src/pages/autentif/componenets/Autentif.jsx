@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { MyContext } from '../../../utils/contextProvider';
+import { useNavigate } from 'react-router-dom';
 
 export const AutentifSection = () => {
+    const [products, setProducts, users, setUsers] = useContext(MyContext)
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const goto = useNavigate('')
+    const handleSignIn = () => {
+        const user = users.find(user => user.email === email && user.password === password);
+        if (user) {
+            goto('/');
+        } else {
+            alert('Invalid email or password');
+        }
+    };
+
     return (
         <>
             <div className='w-[100%] flex gap-4 justify-center  p-32'>
@@ -17,7 +32,7 @@ export const AutentifSection = () => {
                         </p>
                     </div>
 
-                    <button className='bg-black w-[200px] text-white p-4 ml-8 my-4  text-2xl hover:bg-[#e65540] '>CONTINUE</button>
+                    <button onClick={() => { goto('/signup') }} className='bg-black w-[200px] text-white p-4 ml-8 my-4  text-2xl hover:bg-[#e65540] '>CONTINUE</button>
 
                 </div>
                 <div className='w-[40%] border-2 flex flex-col text-start p-6'>
@@ -27,14 +42,14 @@ export const AutentifSection = () => {
                     <p className='text-gray-500 font-bold'>
                         I am returning costumer
                     </p>
-                    <form action="" className='flex flex-col'>
+                    <form onSubmit={e => { e.preventDefault(); handleSignIn(); }} className='flex flex-col'>
                         <label htmlFor="">Email</label>
-                        <input placeholder='Email' className='my-4' type="email" />
+                        <input placeholder='Email' className='my-4' type="email" value={email} onChange={e => setEmail(e.target.value)} />
                         <label htmlFor="">Password</label>
-                        <input placeholder='Password' className='my-4' type="password" />
-                        <p className='cursor-pointer hover:bg-[#e65540] '>Forgot your password?</p>
+                        <input placeholder='Password' className='my-4' type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <p className='cursor-pointer hover:text-[#e65540] py-4' onClick={() => alert('Implement forgot password functionality')}>Forgot your password?</p>
+                        <button type='submit' className='bg-black w-[200px] text-white p-4 text-2xl hover:bg-[#e65540] '>SIGN IN</button>
                     </form>
-                    <button type='submit' className='bg-black w-[200px] text-white p-4  text-2xl hover:bg-[#e65540] '>SIGN IN</button>
 
                 </div>
             </div>

@@ -23,7 +23,7 @@ import blog3 from '../../../assets/blog-10.jpg'
 
 
 export const FirstSection = () => {
-    const [test, setTest, products, setProducts] = useContext(MyContext)
+    const [products, setProducts] = useContext(MyContext)
     const [activeTab, setActiveTab] = useState('New');
     const [slide, setSlide] = useState([slide1, slide2, slide3, slide4]);
 
@@ -108,6 +108,8 @@ export const FirstSection = () => {
                             <h3>{product.name}</h3>
                             <p>Price: ${product.price}</p>
                             <p>Condition: {product.condition}</p>
+                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-235%]'>Send</button>
+
                         </div>
                     ))}
                 </div>

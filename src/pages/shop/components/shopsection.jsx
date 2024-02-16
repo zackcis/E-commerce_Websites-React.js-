@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { MyContext } from '../../../utils/contextProvider'; // Assuming this is the correct path to your context file
+import { MyContext } from '../../../utils/contextProvider'; 
 import back from '../../../assets/heading-pages-02.jpg';
 
 export const Shopsection = () => {
-    const [test, setTest, products, setProducts] = useContext(MyContext);
-
+    const [products, setProducts,users,setUsers] = useContext(MyContext);
     const [category, setCategory] = useState("");
-
     const [priceRange, setPriceRange] = useState("");
-
     const [screenArray, setScreenArray] = useState(products) 
     const filterElement = (event) => {
         console.log(products);
@@ -19,6 +16,7 @@ export const Shopsection = () => {
         if (category && product.gender !== category) {
             return false;
         }
+        //* STACKOVERFLOW
         if (priceRange) {
             const [min, max] = priceRange.split('-');
             const price = product.price;
@@ -29,19 +27,32 @@ export const Shopsection = () => {
         return true;
 
     });
+    const handleSend = (product) => {
+        const productdeja = users[0].products.findIndex(p => p.name === product.name);
+        if (productdeja !== -1) {
+            const newUsers = [...users];
+            newUsers[0].products[productdeja].quantity += 1;
+            setUsers(newUsers);
+        } else {
+            const newUsers = [...users];
+            product.quantity = 1; 
+            newUsers[0].products.push(product); 
+            setUsers(newUsers);
+        }
+    };
     return (
         <>
             <div className='relative'>
                 <img src={back} alt="" />
-                <h1 className='absolute top-[50%] left-[50%] text-white font-bold text-5xl translate-x-[-50%] translate-y-[-50%]'>CONTACT</h1>
+                <h1 className='absolute top-[50%] left-[50%] text-white font-bold text-5xl translate-x-[-50%]'>SHOP</h1>
             </div>
-            <div className='w-[100%] flex justify-center p-44'>
-                <div className='w-[20%] flex flex-col gap-7'>
+            <div className='w-[100%] flex justify-center px-28'>
+                <div className='w-[20%] flex flex-col gap-7 pt-10'>
                     <div className='w-[100%] flex flex-col gap-3'>
                         <h1 className='font-bold text-2xl '>Category</h1>
-                        <p onClick={() => setCategory("")}>All</p>
-                        <p onClick={() => setCategory("women")}>Women</p>
-                        <p onClick={() => setCategory("men")}>Men</p>
+                        <p className='cursor-pointer' onClick={() => setCategory("")}>All</p>
+                        <p className='cursor-pointer' onClick={() => setCategory("women")}>Women</p>
+                        <p className='cursor-pointer' onClick={() => setCategory("men")}>Men</p>
                     </div>
                     <div className='w-[100%]  flex flex-col gap-3'>
                         <h1 className='font-bold text-2xl '>Price Range</h1>
@@ -57,11 +68,6 @@ export const Shopsection = () => {
                     </div>
                 </div>
                 <div className='w-[100%] flex flex-col justify-center items-center'>
-                    <div className='flex items-center w-[100%] justify-center gap-8'>
-                        <input type="text" />
-                        <input type="text" />
-                    </div>
-                    
                         <div className='w-[100%] p-10 gap-4 flex justify-center items-center flex-wrap '>
                             
                             {filteredProducts.map(product => (
@@ -73,6 +79,8 @@ export const Shopsection = () => {
                                     <h3>{product.name}</h3>
                                     <p>Price: ${product.price}</p>
                                     <p>Condition: {product.condition}</p>
+                                    <button onClick={() => handleSend(product)} className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[15%]  translate-y-[-235%]'>Send</button>
+
                                 </div>
                             ))}
                         </div>
