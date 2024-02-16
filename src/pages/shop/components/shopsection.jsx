@@ -72,7 +72,6 @@ export const Shopsection = () => {
                         <div className='w-[100%] p-10 gap-4 flex justify-center items-center flex-wrap '>
                             
                             {filteredProducts.map(product => (
-                                
                                 <div className='w-[20%] py-5' key={product.name}>
                                     <div className=' overflow-hidden '>
                                         <img className=' hover:scale-110 relative transition delay-75 w-[100%] ' src={product.image} alt={product.name} />
@@ -80,8 +79,7 @@ export const Shopsection = () => {
                                     <h3>{product.name}</h3>
                                     <p>Price: ${product.price}</p>
                                     <p>Condition: {product.condition}</p>
-                                    <button onClick={() => handleSend(product)} className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[15%]  translate-y-[-235%]'>Send</button>
-
+                                    <button onClick={() => handleSend(product)} className='rounded-full bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[15%]  translate-y-[-235%]'>Shop</button>
                                 </div>
                             ))}
                         </div>

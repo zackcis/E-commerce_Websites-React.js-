@@ -58,7 +58,7 @@ export const SignupFirst = () => {
             goto('/')
             console.log(users);
         } else {
-            alert("wa ta 3amer l inputs");
+            alert("Kanchem ri7t lghalat");
         }
     };
     return (

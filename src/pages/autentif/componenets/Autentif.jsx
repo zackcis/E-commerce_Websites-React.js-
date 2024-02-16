@@ -7,7 +7,7 @@ export const AutentifSection = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const goto = useNavigate('')
-    const handleSignIn = () => {
+    const handleLogin = () => {
         const user = users.find(user => user.email === email && user.password === password);
         if (user) {
             goto('/');
@@ -42,7 +42,7 @@ export const AutentifSection = () => {
                     <p className='text-gray-500 font-bold'>
                         I am returning costumer
                     </p>
-                    <form onSubmit={e => { e.preventDefault(); handleSignIn(); }} className='flex flex-col'>
+                    <form onSubmit={e => { e.preventDefault(); handleLogin(); }} className='flex flex-col'>
                         <label htmlFor="">Email</label>
                         <input placeholder='Email' className='my-4' type="email" value={email} onChange={e => setEmail(e.target.value)} />
                         <label htmlFor="">Password</label>

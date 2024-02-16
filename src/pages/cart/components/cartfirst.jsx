@@ -9,11 +9,10 @@ export const Cartfirst = () => {
         newUsers.splice(index, 1);
         setUsers([{ ...users[0], products: newUsers }]);
     };
-
     return (
         <>
 
-            <div className="overflow-x-auto p-20">
+            <div className="overflow-x-auto p-40">
                 <Table>
                     <Table.Head>
                         <Table.HeadCell>Image</Table.HeadCell>

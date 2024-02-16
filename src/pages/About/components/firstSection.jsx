@@ -1,7 +1,7 @@
-
 import './firstSection.sass'
 import story from '../../../assets/story.jpg'
 import back from '../../../assets/back.jpg'
+
 
 export const FirstSectionAbout = () => {
     return (

@@ -19,6 +19,7 @@ import ndader from '../../../assets/shop-item-09.jpg'
 import blog1 from '../../../assets/blog-08.jpg'
 import blog2 from '../../../assets/blog-09.jpg'
 import blog3 from '../../../assets/blog-10.jpg'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -26,6 +27,7 @@ export const FirstSection = () => {
     const [products, setProducts] = useContext(MyContext)
     const [activeTab, setActiveTab] = useState('New');
     const [slide, setSlide] = useState([slide1, slide2, slide3, slide4]);
+    const goto = useNavigate('')
 
     console.log(products);
 
@@ -50,7 +52,7 @@ export const FirstSection = () => {
                             <div className='absolute translate-x-[-50] translate-y-[-50] top-[50%] left-[40%] justify-center items-center text-center '>
                                 <p className='font-bold text-2xl text-white'>Only women can wear this</p>
                                 <h1 className='text-white font-bold text-6xl py-4'>NEW ARRIVAL</h1>
-                                <button className='bg-black w-[200px] text-white p-4  text-2xl hover:bg-[#e65540] rounded-full'>Send</button>
+                                <button onClick={()=>{goto('/shop')}} className='bg-black w-[200px] text-white p-4  text-2xl hover:bg-[#e65540] rounded-full'>Shop Now</button>
                             </div>
                         </div>
                     ))}
@@ -62,32 +64,31 @@ export const FirstSection = () => {
                     <div className='flex flex-col gap-7  justify-center items-center '>
                         <div className='overflow-hidden'>
                             <img src={one} alt="" className='hover:scale-110 relative transition delay-75' />
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Send</button>
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4   text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Shop</button>
                         </div>
                         <div className=' gap-7 overflow-hidden'>
                             <img src={fourth} alt="" className='hover:scale-110 relative transition delay-75' />
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Send</button>
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4   text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Shop</button>
                         </div>
                     </div>
                     <div className='flex flex-col gap-7  justify-center items-center '>
                         <div className='overflow-hidden'>
                             <img src={second} alt="" className='hover:scale-110 relative transition delay-75' />
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Send</button>
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4   text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Shop</button>
                         </div>
                         <div className='overflow-hidden'>
                             <img src={fifth} alt="" className='hover:scale-110 relative transition delay-75' />
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Send</button>
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4   text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Shop</button>
                         </div>
                     </div>
                     <div className='flex flex-col gap-7  justify-center items-center '>
                         <div className='overflow-hidden'>
                             <img src={third} alt="" className='hover:scale-110 relative transition delay-75' />
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Send</button>
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4   text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Shop</button>
                         </div>
                         <div className='overflow-hidden'>
                             <img src={sixth} alt="" className='hover:scale-110 relative transition delay-75' />
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Send</button>
-
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4   text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-125%]'>Shop</button>
                         </div>
                     </div>
                 </div>
@@ -95,9 +96,9 @@ export const FirstSection = () => {
 
             <div className='w-[100% ] flex flex-col justify-center items-center'>
                 <div className=' flex justify-center w-[30%] items-center font-bold text-4xl gap-10 mt-7 border-gray-700 border-2'>
-                    <button onClick={() => setActiveTab('New')}>New</button>
-                    <button onClick={() => setActiveTab('Old')}>Old</button>
-                    <button onClick={() => setActiveTab('Sale')}>Sale</button>
+                    <button className='hover:text-[#e65540] ' onClick={() => setActiveTab('New')}>New</button>
+                    <button className='hover:text-[#e65540] ' onClick={() => setActiveTab('Old')}>Old</button>
+                    <button className='hover:text-[#e65540] ' onClick={() => setActiveTab('Sale')}>Sale</button>
                 </div>
                 <div className='w-[100%] p-24 flex gap-5 justify-center items-center '>
                     {filteredProducts.map(product => (
@@ -108,7 +109,7 @@ export const FirstSection = () => {
                             <h3>{product.name}</h3>
                             <p>Price: ${product.price}</p>
                             <p>Condition: {product.condition}</p>
-                            <button className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-235%]'>Send</button>
+                            <button onClick={()=>{goto('/shop')}} className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[45%]  translate-y-[-235%]'>Shop</button>
 
                         </div>
                     ))}
@@ -168,7 +169,7 @@ export const FirstSection = () => {
                     <h1 className='text-black text-2xl '>
                         Free Delivery Worldwide
                     </h1>
-                    <p className='text-[#f0f0f0] '>
+                    <p className='text-gray-500 '>
                         Mirum est notare quam littera gothica
                     </p>
                 </div>
@@ -176,7 +177,7 @@ export const FirstSection = () => {
                     <h1 className='text-black text-2xl '>
                         Free Delivery Worldwide
                     </h1>
-                    <p className='text-[#f0f0f0] '>
+                    <p className='text-gray-500 '>
                         Mirum est notare quam littera gothica
                     </p>
                 </div>
@@ -184,7 +185,7 @@ export const FirstSection = () => {
                     <h1 className='text-black text-2xl '>
                         Free Delivery Worldwide
                     </h1>
-                    <p className='text-[#f0f0f0] '>
+                    <p className='text-gray-500 '>
                         Mirum est notare quam littera gothica
                     </p>
                 </div>
