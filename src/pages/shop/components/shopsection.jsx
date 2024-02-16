@@ -32,6 +32,7 @@ export const Shopsection = () => {
         if (productdeja !== -1) {
             const newUsers = [...users];
             newUsers[0].products[productdeja].quantity += 1;
+            newUsers[0].products[productdeja].price += product.price;
             setUsers(newUsers);
         } else {
             const newUsers = [...users];
