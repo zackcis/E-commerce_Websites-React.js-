@@ -18,8 +18,8 @@ export const AutentifSection = () => {
 
     return (
         <>
-            <div className='w-[100%] flex gap-4 justify-center  p-32'>
-                <div className='w-[40%] h-[30%] border-2 flex flex-col text-start'>
+            <div className='w-[100%] flex max-[430px]:flex-col gap-4 justify-center max-[430px]:p-5 max-[430px]:my-5 lg:p-32'>
+                <div className=' lg:w-[40%] h-[30%] border-2 flex flex-col text-start'>
                     <div className='flex flex-col justify-start items-start p-8'>
                         <h1 className='text-black text-3xl'>
                             New Customer
@@ -35,7 +35,7 @@ export const AutentifSection = () => {
                     <button onClick={() => { goto('/signup') }} className='bg-black w-[200px] text-white p-4 ml-8 my-4  text-2xl hover:bg-[#e65540] '>CONTINUE</button>
 
                 </div>
-                <div className='w-[40%] border-2 flex flex-col text-start p-6'>
+                <div className=' lg:w-[40%] border-2 flex flex-col text-start p-6'>
                     <h1 className='text-black text-3xl'>
                         Returning Customer
                     </h1>

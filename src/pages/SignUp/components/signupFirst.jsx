@@ -63,8 +63,8 @@ export const SignupFirst = () => {
     };
     return (
         <>
-            <div className='w-[100%] flex justify-center items-center'>
-                <div className='w-[70%] p-40 flex flex-col '>
+            <div className='w-[100%] flex max-[430px]:flex-col justify-center items-center'>
+                <div className='lg:w-[70%] lg:p-40 flex flex-col max-[430px]:p-10 mt-10 '>
                     <h1 className='text-black text-4xl'>
                         Create Account
                     </h1>

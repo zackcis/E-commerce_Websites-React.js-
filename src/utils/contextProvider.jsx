@@ -1,3 +1,4 @@
+import React, { createContext, useState } from 'react';
 import img4 from '../assets/item-03.jpg';
 import img5 from '../assets/item-04.jpg';
 import img6 from '../assets/item-10.jpg';
@@ -7,10 +8,14 @@ import img9 from '../assets/item-13.jpg';
 import img10 from '../assets/item-14.jpg';
 import img11 from '../assets/item-15.jpg';
 import img12 from '../assets/item-16.jpg';
-import React, { createContext, useState } from 'react'
-export const MyContext = createContext()
+
+export const MyContext = createContext();
+
 export const MyProvider = ({ children }) => {
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([{
+        name: "Default User",
+        products: []
+    }]);
 
     const [products, setProducts] = useState([
         {
@@ -94,16 +99,11 @@ export const MyProvider = ({ children }) => {
             size: "One Size",
             condition: "new",
         },
-
-        // Add more products as needed
     ]);
 
     return (
-        <>
-
-            <MyContext.Provider value={[products, setProducts,users,setUsers]} >
-                {children}
-            </MyContext.Provider>
-        </>
-    )
-}
+        <MyContext.Provider value={[products, setProducts, users, setUsers]}>
+            {children}
+        </MyContext.Provider>
+    );
+};

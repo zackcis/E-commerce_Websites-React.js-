@@ -3,16 +3,18 @@ import { Table } from 'flowbite-react';
 import { MyContext } from '../../../utils/contextProvider';
 
 export const Cartfirst = () => {
-    const [products, setProducts, users, setUsers] = useContext(MyContext)
+    const [products, setProducts, users, setUsers] = useContext(MyContext);
+
     const Delete = (index) => {
         const newUsers = [...users[0].products];
         newUsers.splice(index, 1);
         setUsers([{ ...users[0], products: newUsers }]);
     };
+    const productCount = users[0]?.products.length || 0;
     return (
         <>
 
-            <div className="overflow-x-auto p-40">
+            <div className="max-[430px]:w-[90%] overflow-x-auto lg:p-40 max-[430px]:my-24">
                 <Table>
                     <Table.Head>
                         <Table.HeadCell>Image</Table.HeadCell>

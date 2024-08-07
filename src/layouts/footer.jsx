@@ -13,8 +13,8 @@ import { FiInstagram } from "react-icons/fi";
 const Footer = () => {
     return (
         <>
-            <footer className='flex flex-col justify-around items-center bg-[#f0f0f0] w-[100%] '>
-                <div className='flex justify-around  w-[100%] p-20 '>
+            <footer className='flex flex-col justify-around items-center bg-[#f0f0f0] w-[100%]  '>
+                <div className='flex max-[430px]:flex-col justify-around  w-[100%] lg:p-20 p-10 max-[430px]:gap-10'>
 
                     <div className='flex-col '>
                         <h3 className='pb-7'><b>GET IN TOUCH</b></h3>
@@ -56,14 +56,14 @@ const Footer = () => {
                     </div>
                     <div className='flex flex-col justify-center items-start'>
                         <h2 className='pb-20'><b>NEWSLETTER</b></h2>
-                        <form action="">
+                        <form action="" className='border-b-2 border-black '>
                             <input className='outline-none bg-[#f0f0f0] border-b-2 border-black border-none ' type="email" placeholder='Email Address' />
                         </form>
                         <button className='bg-black text-white p-4 px-7 hover:bg-[#e65540] rounded-full'>SUBSCRIBE</button>
                     </div>
                 </div>
                 <div className='w-[80%] text-center p-5'>
-                    <p>Copyright © 2022 <span className='cursor-pointer hover:text-[#e65540]'>Shopify Theme Developed by MassTechnologist</span> All rights reserved.</p>
+                    <p>Copyright © 2022 <span className='cursor-pointer hover:text-[#e65540]'>Developed by Zakaria Dahar</span> All rights reserved.</p>
                 </div>
             </footer>
         </>
